@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "519295019902",
+    "firebase_url": "https://descubriio.firebaseio.com",
+    "project_id": "descubriio",
+    "storage_bucket": "descubriio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519295019902:android:85fee983b6c34a1af6212f",
+        "android_client_info": {
+          "package_name": "com.descubri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519295019902-idfvgalg7qo2ebq3ujemeqtkul12lqv1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.descubri",
+            "certificate_hash": "116a87337d245b6d6f415b8fe1006dc0234feec9"
+          }
+        },
+        {
+          "client_id": "519295019902-vgikn0p15fb5pkt0rpeootqt9d1lpqlf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-LR_myTds_lQTprNwIoXTT94ZT7j7ia8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519295019902-vgikn0p15fb5pkt0rpeootqt9d1lpqlf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "519295019902-1j27fta746enhu5qbp6m9i004piius0n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.descubri"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
