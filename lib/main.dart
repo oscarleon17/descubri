@@ -1,22 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'screens/DescubriHome.dart';
+import 'screens/DescubriOnboarding.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      body: Center(
-        child: RaisedButton(
-          onPressed: _incrementCounter,
-          child: Text('Increment Counter'),
-        ),
-      ),
-    ),
-  ));
+int initScreen;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  initScreen = await prefs.getInt("initScreen");
+  await prefs.setInt("initScreen", 1);
+  runApp(DescubriApp());
 }
 
-_incrementCounter() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  int counter = (prefs.getInt('counter') ?? 0) + 1;
-  print('Pressed $counter times.');
-  await prefs.setInt('counter', counter);
+class DescubriApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      title: 'Descubri',
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+      ),
+      initialRoute: initScreen == 0 || initScreen == null ? "first" : "/",
+      routes: {
+        '/': (context) => DescubriHome(
+          title: "Descubri Home"
+        ),
+        "first": (context) => DescubriOnboarding(),
+      },
+    );
+  }
 }
