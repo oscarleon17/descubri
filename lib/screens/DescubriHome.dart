@@ -1,45 +1,52 @@
 import 'package:flutter/material.dart';
+import 'DescubriHomeWidget.dart';
+import 'DescubriMenuWidget.dart';
+import 'DescubriProfileWidget.dart';
 
 class DescubriHome extends StatefulWidget {
-  DescubriHome({Key key, this.title}) : super(key: key);
 
-  final String title;
-
-  @override
-  _DescubriHomeState createState() => _DescubriHomeState();
+  State<StatefulWidget> createState(){
+    return _DescubriHomeState();
+  }
 }
 
-class _DescubriHomeState extends State<DescubriHome> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class _DescubriHomeState extends State<DescubriHome>{
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    DescubriMenuWidget(Colors.red),
+    DescubriHomeWidget(Colors.white),
+    DescubriProfileWidget(Colors.blue)
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
+        items: [
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            title: Text('Menu'),
+          ),
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            title: Text('Me'),
+          ),
+        ],
       ),
     );
   }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 }
+

@@ -23,9 +23,7 @@ class DescubriApp extends StatelessWidget{
       ),
       initialRoute: initScreen == 0 || initScreen == null ? "first" : "/",
       routes: {
-        '/': (context) => DescubriHome(
-          title: "Descubri Home"
-        ),
+        '/': (context) => DescubriHome(),
         "first": (context) => DescubriOnboarding(),
       },
     );
