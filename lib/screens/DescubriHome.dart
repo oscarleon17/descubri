@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'DescubriHomeWidget.dart';
 import 'DescubriMenuWidget.dart';
-import 'DescubriProfileWidget.dart';
+import 'DescubriProfileRoot.dart';
 
 class DescubriHome extends StatefulWidget {
 
@@ -15,7 +15,7 @@ class _DescubriHomeState extends State<DescubriHome>{
   final List<Widget> _children = [
     DescubriMenuWidget(Colors.red),
     DescubriHomeWidget(Colors.white),
-    DescubriProfileWidget(Colors.blue)
+    DescubriProfileRoot(Colors.blue)
   ];
 
   @override
