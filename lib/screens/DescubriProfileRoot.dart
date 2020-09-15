@@ -1,9 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../services/AuthService.dart';
+import 'package:descubri/screens/DescubriLoginWidget.dart';
 
 class DescubriProfileRoot extends StatelessWidget {
 
+  
   final String userId = AuthService().getCurrentUser();
   final Color color;
   DescubriProfileRoot(this.color);
@@ -11,6 +12,8 @@ class DescubriProfileRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    //AuthService().signInWithUsernameAndPassword('oscar@descubri.io', 'testin');
+    //print(AuthService().signInWithUsernameAndPassword('oscar@descubri.io', 'testin'));
     if (userId != null) {
       return Container(
         color: color,
@@ -18,7 +21,7 @@ class DescubriProfileRoot extends StatelessWidget {
 
     } else {
       return Container(
-        color: Colors.black,
+
       );
     }
   }
