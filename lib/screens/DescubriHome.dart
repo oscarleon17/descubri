@@ -15,7 +15,7 @@ class _DescubriHomeState extends State<DescubriHome>{
   final List<Widget> _children = [
     DescubriMenuWidget(Colors.red),
     DescubriHomeWidget(Colors.white),
-    DescubriProfileRoot(Colors.blue)
+    DescubriProfileRoot(Colors.black)
   ];
 
   @override
@@ -28,15 +28,15 @@ class _DescubriHomeState extends State<DescubriHome>{
         items: [
           new BottomNavigationBarItem(
             icon: Icon(Icons.menu),
-            title: Text('Menu'),
+            label: 'Menu',
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home'),
+            label: 'Home',
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            title: Text('Me'),
+            label: 'Profile'
           ),
         ],
       ),
