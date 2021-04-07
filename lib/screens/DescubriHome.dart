@@ -4,17 +4,16 @@ import 'DescubriMenuWidget.dart';
 import 'DescubriProfileRoot.dart';
 
 class DescubriHome extends StatefulWidget {
-
-  State<StatefulWidget> createState(){
+  State<StatefulWidget> createState() {
     return _DescubriHomeState();
   }
 }
 
-class _DescubriHomeState extends State<DescubriHome>{
+class _DescubriHomeState extends State<DescubriHome> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     DescubriMenuWidget(Colors.red),
-    DescubriHomeWidget(Colors.white),
+    DescubriHomeWidget(Colors.blue),
     DescubriProfileRoot(Colors.black)
   ];
 
@@ -35,9 +34,7 @@ class _DescubriHomeState extends State<DescubriHome>{
             label: 'Home',
           ),
           new BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Profile'
-          ),
+              icon: Icon(Icons.account_circle), label: 'Profile'),
         ],
       ),
     );
@@ -49,4 +46,3 @@ class _DescubriHomeState extends State<DescubriHome>{
     });
   }
 }
-
