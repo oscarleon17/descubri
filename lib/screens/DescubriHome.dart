@@ -13,7 +13,7 @@ class _DescubriHomeState extends State<DescubriHome> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     DescubriMenuWidget(Colors.red),
-    DescubriHomeWidget(Colors.blue),
+    DescubriHomeWidget(Colors.white),
     DescubriProfileRoot(Colors.black)
   ];
 
