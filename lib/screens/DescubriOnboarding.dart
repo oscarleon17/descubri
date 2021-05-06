@@ -50,20 +50,16 @@ class _DescubriOnboardingState extends State<DescubriOnboarding> {
                         .center //Center Column contents vertically,
                     )),
           ),
-          floatingActionButton: Container(
-              child: SizedBox(
-                  height: 60,
-                  width: 60,
-                  child: FloatingActionButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DescubriHome()),
-                      );
-                    },
-                    tooltip: "Go Home",
-                    child: Icon(Icons.home),
-                  ))),
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DescubriHome()),
+              );
+            },
+            tooltip: "Go Home",
+            label: Text("Start Discovering"),
+          ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerFloat,
         )
